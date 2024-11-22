@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homex.css">
+    <link rel="stylesheet" href="faltu.css">
+
+
+    <title>My E-Commerce Website</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">Fashion Hub</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shoping.html">Shop</a></li>
+                <li><a href="conatctus.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div class="img-icon">
+                <img class="nightmode" src="half-moon.png"alt="" id="icon">
+            </div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    
+    </header>
+
+    <!-- Your e-commerce content goes here -->
+
+    <script >document.querySelector('.burger').addEventListener('click', () => {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    });
+    var icon=document.getElementById("icon")
+    icon.onclick=function(){
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+            icon.src="sun.png";
+        }
+        else{
+            icon.src="half-moon.png";
+        }
+        
+    }
+    </script>
+</body>
+</html>
+
+
+
+var nightmode=document.getElementById("yup")
+var daymode=document.getElementById("nope")
+
+nightmode.onclick=function(){
+   document.body.classList.toggle("dark-theme");
+  }
+
+ 

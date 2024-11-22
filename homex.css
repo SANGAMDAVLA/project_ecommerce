@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: myfont;
+    src:url(Pink.otf);
+}
+@font-face{
+    font-family: mysecond;
+    src:url(KrinkesDecorPERSONAL.ttf)
+}
+root{
+    --main-color:white;
+    --primary-color:whitesmoke;
+    --secondary-color:black;
+}
+body{
+    background:var(--main-color);
+    color:var(--secondary-color);
+}
+
+.dark-theme{
+    --main-color:#1f242d;
+    --primary-color:#323946;
+    --secondary-color:white;
+}
+/* Style the header and navigation */
+header {
+    background:orange;
+    color:white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 12;
+    padding-bottom:0%;
+}
+
+
+
+nav {
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+}
+
+.logo a {
+    color:white;
+    text-decoration: none;
+    font-size: 1.9rem;
+    font-weight: bold;
+    font-family: myfont;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding-top: 0.2%;
+    padding-left: 36%;
+}
+
+.nav-links li {
+    margin-right: 4rem;
+
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.9rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 550;
+    
+}
+.nav-links a:hover{
+ color:navy;
+}
+.img-icon{
+    padding-right: 3%;
+    padding-bottom: 1%;
+    padding-left: 5%;
+}
+.img-icon img{
+    color: #fff;
+}
+.nightmode{
+    height:1.5rem;
+    width:1.5rem;
+}
+
+
+/* Style the mobile menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding-left: 30%;
+}
+
+.line1, .line2, .line3 {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        background-color:orange;
+        color: #fff;
+        padding: 1rem 0;
+        padding-left: 0%;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        font-size: 20px;
+    }
+   
+    .logo a {
+        color:white;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: myfont;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        width: 40%;
+        left: 60%;
+        justify-content: right;
+        background-color: orange;
+        padding :3%;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    .chatbot-container {
+        width: 300px;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .chat-window {
+        background-color: #f9f9f9;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .chat-header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .chat-body {
+        flex-grow: 1;
+        padding: 10px;
+        overflow-y: auto;
+    }
+    
+    .chat-input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #eee;
+    }
+    
+    input[type="text"] {
+        flex-grow: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 12px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #555;
+    }
+}

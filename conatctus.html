@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="homei.css" rel="stylesheet">
+    <link href="homex.css" rel="stylesheet">
+</head>
+<body>
+  <header id="navbar">
+    <nav>
+        <div class="logo">
+            <a href="#">Fashion Hub</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shoping.html">Shop</a></li>
+            <li><a href="conatctus.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="img-icon">
+            <img class="nightmode" src="half-moon.png"alt="" id="icon">
+        </div>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+</header>
+  
+  
+    <section class="contactus-img">
+        <h1>Contact us</h1>
+        <h4>Leave your suggestion or mesaage for us</h4>
+    </section>
+
+    <section class="visit-details">
+      <div class="adress">
+        <h2>Visit our head office or contact us through email or mobile</h2>
+        <div  id="leftie1">
+          <i class='bx bx-store-alt'></i>
+          <p>new market road,Rampura phul</p>
+        </div>
+        <div  id="leftie1">
+          <i class='bx bx-envelope' ></i>
+          <p>muskaangarg518@gmail.com</p>
+        </div>
+        <div  id="leftie1">
+          <i class='bx bx-phone' ></i>
+          <p>92830802092</p>
+        </div>
+      </div>
+      <div class="map">
+        <iframe id="map1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.781353949457!2d75.23322301089696!3d30.271810407657743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3910c48f86ceecef%3A0x1738394331530395!2sNew%20Market%20Rd%2C%20Rampura%20Phul%2C%20Punjab%20151103!5e0!3m2!1sen!2sin!4v1687547754011!5m2!1sen!2sin"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <section class="contact-secondpart">
+      <div class="contact-second-left">
+        <h3>Leave your suggestion</h3>
+        <form class="firstform" >
+          <input type="text" name="Name" placeholder="Full Name">
+          <input type="text" name="Name" placeholder="Last Name">
+          <input type="email" name="Email" placeholder="Email">
+          <textarea name="message" placeholder="Message"></textarea>
+          <button type="submit">send</button>
+        </form>
+      </div>
+      <div class="star-rating">
+        <div >
+          <h3>Give Rating as per our services</h3>
+        <h2>How was your experience?</h2>
+        </div>
+        <button class="star">&#9734</button>
+        <button class="star">&#9734</button>
+        <button class="star">&#9734</button>
+        <button class="star">&#9734</button>
+        <button class="star">&#9734</button>
+        <div class="detail">
+         <p id="current-rating">0 of 5</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="part1" id="allparts">
+      <u><h2>Fashionista</h2></u>
+      <p>All types of kidswear ,ladies wear ,gentswear and all fashion clothes</p>
+      </div>
+    
+      <div class="part2" id="allparts">
+        <u><h2>Products</h2></u>
+        <ul>
+          <li style="list-style: none;"></li>
+          <a href="">Your account</a>
+          <a href="">Track your Order</a>
+          <a href="">Shipping Rates</a>
+          <a href="">Help</a>
+        </ul>
+      </div>
+    
+      <div class="part2" id="allparts">
+        <u><h2>Useful links</h2></u>
+        <ul>
+          <li style="list-style: none;"></li>
+          <a href="">Your account</a>
+          <a href="">Track your Order</a>
+          <a href="">Shipping Rates</a>
+          <a href="">Help</a>
+        </ul>
+      </div>
+    
+      <div class="part2" id="allparts">
+        <u><h2>Adress and contact</h2></u>
+        <p>New Market Rampura Phul,Dist.Bathinda,Pin-151103,IND </p>
+        <p>asgeneralstore1234@gmail.com</p>
+        <p>+91 1234576890 ; +91 87906543</p>
+      </div>
+      
+    
+    </footer>
+    <script>
+      const allstars=document.querySelectorAll('.star');
+    var id= document.getElementById('current-rating');
+    
+    allstars.forEach ((star,i) =>{
+      star.onclick=function(){
+        let current_star_level=i+1;
+        id.innerHTML=`${current_star_level} of 5`;
+
+        allstars.forEach((star,j)=>{
+          if(current_star_level>=j+1)
+          {
+             star.innerHTML='&#9733';
+          }else{
+            star.innerHTML='&#9734';
+          }
+        })
+      }
+    })
+</script>
+<script src="homey.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+</body>
+</html>

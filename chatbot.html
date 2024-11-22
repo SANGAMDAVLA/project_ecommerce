@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="chat.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <button class="chatbot-toggler">
+        <span class="material-symbols-outlined">mode_comment</span>
+        <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2>Chatbot</h2>
+            <span class="material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="material-symbols-outlined">
+                    smart_toy
+                    </span>
+                <p>Hi there<br>How Can I help you today</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Enter a message"></textarea>
+            <span id="send-btn" class="material-symbols-outlined">send</span>
+        </div>
+    </div>
+    <script>
+        const chatInput =document.querySelector(".chat-input textarea")
+        const sendChatbutton =document.querySelector(".chat-input span")
+        const chatBox =document.querySelector(".chatbox")
+        const chatToggler=document.querySelector(".chatbot-toggler")
+
+        let usermessage;
+        const createChatLi=(message,className)=>{
+        const chatLi=document.createElement("li");
+        chatLi.classList.add("chat",className);
+        let chatContent =className === "outgoing"?`<p>${message}</p>`:`<span class="material-symbols-outlined">smart toy</span> <p>${message}</p>`;
+        chatLi.innerHTML=chatContent;
+        return chatLi;
+        }
+      
+        const handleChat=()=>{
+            usermessage=chatInput.value.trim();
+            if(!usermessage)return;
+            chatBox.appendChild(createChatLi(usermessage,"outgoing"));
+
+            setTimeout(()=>{
+                chatBox.appendChild(createChatLi("Thinking......","incoming"));
+            },600);
+        }
+        sendChatbutton.addEventListener("click",handleChat);  
+        chatToggler.addEventListener("click",() =>document.body.classList.toggle("show-chatbot"));                                        
+
+
+    </script>
+</body>
+</html>
